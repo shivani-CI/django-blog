@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-e)ldzyu=*$)r$xmb0t9u)o=2wc=9%a&9&@e=i^57#kun=y!8%5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["8000-shivanici-djangoblog-3ur836zlpa7.ws.codeinstitute-ide.net",'.herokuapp.com']
+ALLOWED_HOSTS = [".codeinstitute-ide.net",'.herokuapp.com']
 
 
 # Application definition
@@ -89,6 +89,12 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
+
+
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Password validation
@@ -131,3 +137,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
